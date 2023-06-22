@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Help Center</title>
+          <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/datalegreya" type="text/css"/>
+          <style>
+            body{
+                 background-image:url(1.png);
+                 align-items: center;
+                 justify-content: center;
+                 padding-left: 424px;
+                 padding-top: 50px;
+            }
+            #div-1{
+                 color:white;
+                 font-family: 'Poppins',sans-serif;
+                 font-size:35px;
+            }
+            #div-2{
+                 color:white;
+                 font-family: 'Poppins',sans-serif;
+                 font-size:20px;
+            }
+            #main-div{
+                background-color:rgba(123, 123, 123, 0.308);
+                height: 531px;
+                width: 631px;
+                padding-left:10px;
+                padding-top:25px;
+            }
+            input{
+                border-radius:10px;
+                height:20px;
+                width:300px;
+                font-family: 'DatalegreyaThin';
+                font-weight: bolder;
+                font-size:20px;
+                color:#000000 ;
+                background-color:rgba(240, 255, 255, 0.493)
+            }
+            ::placeholder{
+                border-radius:10px;
+                height:20px;
+                width:300px;
+                font-family: 'DatalegreyaThin';
+                font-weight: bolder;
+                font-size:20px;
+                color:#000000 ;
+            }
+            #problem{
+                border-radius:10px;
+                height:250px;
+                width:612px;
+                font-family: 'DatalegreyaThin';
+                font-weight: bolder;
+                font-size:20px;
+                color:#000000 ;
+                background-color:rgba(240, 255, 255, 0.493);
+            }
+            #but-1{
+                height:50px;
+                width:400px;
+                font-family: 'DatalegreyaThin';
+                font-weight: bolder;
+                font-size:35px;
+                color:#000000 ;
+                background-color:rgb(255, 255, 255)
+            } 
+          </style>
+</head>
+<body>
+   <div class="container" id="main-div">
+       <div id="div-1">
+          Welcome to ℳeasurometer Help Center 
+          <br>
+          How can I help you ?
+       </div>   
+       <div id="div-2">
+          <br>
+          <form method="POST" name="google-sheet" >       
+          <input type="email" placeholder=" Please Enter you Email" required id="email" name="email"> 
+          <input type="text" placeholder=" Please Enter you Name" required id="name" name="name">
+          <br>
+          <br>
+          <textarea placeholder=" Please Enter your problem related to ℳeasurometer" required id="problem" name="problem"></textarea>
+          <br>
+          <br>
+          <button id="but-1">Enter</button>
+          <br>
+          We will contact you soon through your email account
+          
+</form> 
+       </div>
+      </div>
+      <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzCw2fLnC5HKU7dU4p07Nja_QFk0wsXcOCjkz_HmhgYBFZVZQlisbfR1esHtSnTNbXD/exec'
+        const form = document.forms['google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert("Thank you. We will contact you soon. Stay tuned to ℳeasurometer"))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<head>
+  <title>
+    Solid Coloured Clocks
+  </title>
+</head>
+<div class="clock">
+          <div class="display">
+    </div>
+    </div>
+    <script>
+          setInterval(function(){
+            const clock = document.querySelector(".display");
+            let time = new Date();
+            let sec = time.getSeconds();
+            let min = time.getMinutes();
+            let hr = time.getHours();
+            let day = 'AM';
+            if(hr > 12){
+              day = 'PM';
+              hr = hr - 12;
+            }
+            if(hr == 0){
+              hr = 12;
+            }
+            if(sec < 10){
+              sec = '0' + sec;
+            }
+            if(min < 10){
+              min = '0' + min;
+            }
+            if(hr < 10){
+              hr = '0' + hr;
+            }
+            clock.textContent = hr + ':' + min + ':' + sec + " " + day;
+          });
+        </script>
+<style>
+          body{
+  display: grid;
+  place-items: center;
+  background: green;
+}
+.clock{
+  background: #131419;
+  height: 120px;
+  
+  line-height: 120px;
+  text-align: center;
+  padding: 0 30px;
+  box-shadow: -3px -3px 7px rgba(255,255,255,0.05),
+               3px 3px 5px rgba(0,0,0,0.5);
+}
+.clock .display{
+  font-size: 60px;
+  color: cyan;
+  letter-spacing: 5px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+</style>

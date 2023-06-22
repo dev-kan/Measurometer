@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="measurometer-logo-1.png" type="image/x-icon" widht="100vh" height="100vh"> 
+          <title>Facebook</title>
+          <style>
+                    body{
+                              background-image: url("bg-img2.png");
+                    }
+                    #measurometer-logo-1{
+                              height:50px;
+                    }
+                    head{
+                            
+                              place-items: center;
+                    }
+                    #h100{
+                              font-family: 'Poppins',sans-serif;
+                              font-size: 40px;
+                              align-items:center;
+                              justify-content:center;
+                              display:flex;
+                              color:#ffffff;
+                    }
+                    #h300{
+                              font-family: 'Poppins',sans-serif;
+                              font-size: 20px;
+                              align-items:center;
+                              justify-content:center;
+                              display:flex;
+                              color:#ffffff;
+                    }
+                    #Email{
+                            border-radius: 15px;
+                            height:40px;
+                            width:350px;
+                            color:#ffffff;
+                            border-color:#ffffff;
+                            font-weight: 500;
+                            font-size: 1rem;
+                            background-color: #00000000;
+                    }
+                    #Email::placeholder{
+                               color:#ffffff;
+                               font-size: 1rem;
+                    }
+                    #inp-1{
+                              border-radius: 15px;
+                              height:40px;
+                              width:100px;
+                              font-weight: 500;
+                              font-size: 1rem;
+                              background-color: aqua;
+                    }
+                    #inp-1:hover{
+                        background-color:white;
+                        animation: delay 0.2sec ease-out;
+                    }
+          </style>
+</head>
+<body>
+   <container id="container-50">
+<img src="measurometer-logo-1.png" id="measurometer-logo-1">
+</container>
+<h1 id="h100">Facebook page coming soon</h1>
+<h3 id="h300">Want some updates? Join our NEWSLETTER</h3>
+<form id="google-sheet" name="google-sheet">
+&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;
+<input type="email" id="Email" name="Email" placeholder=" Enter Your Email" required >
+<button id="inp-1">
+          ➤
+</button>
+
+</form>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwE6_4rckYZ4UjKh6zm8Z_OBGRCy03jvDKrcw67keW_gWNuE564JqRb4wA5HnuQgREu/exec'
+    const form = document.forms['google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => alert("You are successfully registered. Thank you"))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>

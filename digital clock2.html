@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="measurometer-logo-1.png" type="image/x-icon" widht="100vh" height="100vh"> 
+    <title>Solid Coloured Clocks</title>
+</head>
+<body>
+    <div class="container">
+        <span id="hours">00</span>
+        <span>:</span>
+        <span id="minutes">00</span>
+        <span>:</span>
+        <span id="seconds">00</span>
+        <span id="session">AM</span>
+    </div>
+    <script>
+          function displayTime(){
+    var dateTime = new Date();
+    var hrs = dateTime.getHours();
+    var min = dateTime.getMinutes();
+    var sec = dateTime.getSeconds();
+    var session = document.getElementById('session');
+
+    if(hrs >= 12){
+        session.innerHTML = 'PM';
+    }else{
+        session.innerHTML = 'AM';
+    }
+
+    if(hrs > 12){
+        hrs = hrs - 12;
+    }
+
+    document.getElementById('hours').innerHTML = hrs;
+    document.getElementById('minutes').innerHTML = min;
+    document.getElementById('seconds').innerHTML = sec;
+}
+setInterval(displayTime, 10);
+    </script>
+    <style>
+          body{
+    margin: 0%;
+    padding: 0%;
+    background: rgb(0, 0, 0);
+}
+.container{
+    font-family: "Arial", Helvetica, sans-serif;
+    padding: 30px;
+    color: #000000;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    font-size: 150px;
+    white-space: nowrap;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #7D2Ae8;
+}
+    </style>
+</body>

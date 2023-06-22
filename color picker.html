@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>RGB Color Picker</title>
+    <!--Google Font-->
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="measurometer-logo-1.png" type="image/x-icon" widht="100vh" height="100vh"> 
+
+</head>
+<body>
+   <div class="container">
+       <div class="wrapper">
+           R<input type="range" min="0" max="255" value="0" id="red" oninput="colors()">
+       </div>
+       <div class="wrapper">
+            G<input type="range" min="0" max="255" value="0" id="green" oninput="colors()">
+        </div>
+        <div class="wrapper">
+            B<input type="range" min="0" max="255" value="0" id="blue" oninput="colors()">
+        </div>
+       
+            <div class="topic"></div>
+        <span id="output">rgb(0, 0, 0)</span>
+       <h3>To copy the RGB code Select it and copy
+        <br>
+        ℳeasurometer
+       </h3>
+
+        <script>
+            function colors(){
+                var red= document.getElementById("red").value;
+                var green = document.getElementById("green").value;
+                var blue = document.getElementById("blue").value;
+                document.body.style.backgroundColor = 
+                'rgb(' + red + ',' + green + ',' + blue + ')';
+                document.getElementById("output").innerHTML =  'rgb(' + red + ',' + green + ',' + blue + ')' ;
+            }
+        </script>
+   </div>
+   <style>
+          body{
+    background-color: #000000;
+}
+.container{
+    background-color: #ffffff;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    padding: 20px 0;
+    box-shadow: 20px 20px 30px rgba(0,0,0,0.2);
+    font-family: 'Work Sans',sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #142b37;
+    border-radius: 5px;
+    display: grid;
+    justify-items: center;
+}
+.wrapper{
+    width: 100%;
+    text-align: center;
+}
+h3{
+    text-align: center;
+}
+input[type="range"]{
+    display: inline-block;
+    width: 80%;
+    margin-left: 10px;
+    margin-top: 25px;
+}
+span{
+    display: inline-block;
+    text-align: center;
+    margin: 20px 0;
+    background-color: #0075FF;
+    color: #ffffff;
+    padding: 10px 30px;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    border-radius: 2px;
+}
+   </style>
+</body>
+</html>
