@@ -1,1 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="measurometer-logo-1.png" type="image/x-icon" widht="100vh" height="100vh"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  
+  <title>ℳeasurometer &reg;</title>
+  <style>
+
+    /*navigation bar*/
+
+    .navbar {
+      overflow: hidden;
+      background-color: rgb(0, 0, 0);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .navbar a {
+      float: left;
+      font-size: 16px;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    
+    .dropdown {
+      float: left;
+      overflow: hidden;
+    }
+    
+    .dropdown .dropbtn {
+      font-size: 16px;  
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+    }
+    
+
+   #button-1 a:hover{
+      color: #a52020;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #000000;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgb(0, 0, 0);
+      z-index: 1;
+    }
+    
+    .dropdown-content a {
+      float: none;
+      color: rgb(255, 255, 255);
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+    
+    .dropdown-content a:hover {
+      color: #a52020;
+    }
+    
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    body {
+      font-family: "Lato", sans-serif;
+    }
+
+    /*side navigation (not of any use)*/
+
+    .sidenav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #000000;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+    
+    .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+    
+    .sidenav a:hover {
+      color: #f1f1f1;
+    }
+    
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0px;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+    
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 18px;}
+    }
+
+    /*page setup*/
+
+    #header-1{
+            background-color: rgb(0, 0, 0);
+            font-size: 50px;
+            text-align: center;
+            color:rgb(255, 255, 255);
+            padding-top: 5px;
+            padding-bottom: 5px;
+ }
+ #P-1{
+            font-size: 40px;
+            color:grey;
+
+ }
+ #P-2{
+            color:white;
+            font-size:20px;
+            font-family: 'Century Gothic', 'Arial Narrow', Arial, sans-serif    
+ }
+
+ /*image hover 3d*/
+
+ @import url(
+'https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500&display=swap');
+  * {
+      box-sizing: border-box;
+  }
+  #div-containers {
+      display: flex;
+      justify-content: left;
+      align-items: left;
+      padding-top: 90px;
+  }
+  #div-1 img:hover {
+      transform: scale3d(1.1, 1.1, 1);
+      cursor: pointer;
+      transition: transform 1s;
+  }
+  img {
+      width: 225px;
+      height: auto;
+  }
+
+  /*login and sign up button (not of use)*/
+
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes button_animation {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  30% {
+    opacity: 1;
+  }
+  80% {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+#img-1{
+            height: 100%;
+            width: 100%;
+}
+#vid-1{
+           width:100%;
+           height:100%;
+}
+
+
+    </style>
+    <style>
+      #button-1{
+                  font-family:Arial, Helvetica, sans-serif;
+                  text-transform: uppercase;
+                  font-size:30px;
+                  width:150px;
+                  height:60px;
+                  border-radius: 80px;
+                  line-height:60px;
+                  text-align:center;
+                  border:3px solid #ffffff;
+                  display:block;
+                  color:#ffffff;
+                  position:relative;
+                  overflow:hidden;
+                  background:transparent;
+                  transition:.3s;
+                  margin-left:400px;
+              }
+      #button-1:before{
+                            content:'';
+                            width: 100%;
+                            height: 100%;
+                            opacity:.5;
+                            position: absolute;
+                            background:#ff0000;
+                            top: 100%;
+                            left:0;
+                            z-index:-1;
+                            transition:.3s;
+      }
+      #button-1:after{
+                            content:'';
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+                            background-color:#ffffff;
+                            top: 100%;
+                            left:0;
+                            z-index:-1;
+                            transition:.3s;
+                            transition-delay: .2s;
+      }
+      #button-1:hover{
+                           color:#a52020;
+
+      }
+      #button-1:hover:before{
+                                  top:0;
+      }
+      #button-1:hover:after{
+                                  top:0;
+      }
+      #vid-2 {
+                 height:25%;
+                 width:25%;
+                 float:left;
+      }
+      #button-100{
+                     color:rgb(232, 210, 210);
+                     font-family:'Poppins',sans-serif;
+                     height:40px;
+                     width:100px;
+                     background-color:#a52020;
+                     font-weight: bold;
+                     border-radius: 15px;
+                     font-size:1rem;
+      }
+      #button-100:hover{
+                           cursor:pointer;
+                           background-color: #f5307f;
+                           animation-delay: 2.0s ease-out;
+      }
+      #Newsletter{
+                   color:#a52020;
+                   height:40px;
+                   width:250px;
+                   border-radius: 15px;
+                   outline:white;
+                   border:none;
+                   border-color: #ffffff;
+                   border-width: 5px;
+                   padding-left:0.2rem;
+                   font-size:1rem;
+                    font-weight:500;
+      } 
+      #Newsletter::Placeholder{
+                    color:#a52020;
+                    font-weight:500;
+      }
+      #footer-1{
+           background-color:#000000;
+            padding-top: 20px;
+            padding-bottom: 20px;
+      }
+  
+    </style>
+
+                  <style>
+                    *{
+                      font-family: "Poppins",sans-serif;
+                    }
+                   .fotter{
+                            color:white;
+                            display:flex;
+                            justify-content:center;
+                            flex:wrap;
+                   }
+                   .fotter-heading{
+                         display:flex;
+                         flex-direction:column;
+                         margin-right:4rem;
+                   }
+                   .fotter-heading h2{
+                                margin-bottom:2rem;
+                                font-family:"Poppins",sans-serif;
+                   }
+                   .fotter-heading a{
+                    color:white;
+                    text-decoration: none;
+                    margin-bottom:0.5rem;
+                   }
+                   .fotter-heading a:hover{
+                         color: #a52020;
+                         transition:0.3s ease-out;
+                   }
+                   #google-sheet{
+                    align-items: center;
+                   }
+                   
+                  </style>
+                   <style>
+                    * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+          }
+          html {
+            scroll-behavior: smooth;
+          }
+                   
+          #progress {
+            position: fixed;
+            bottom: 20px;
+            right: 10px;
+            height: 70px;
+            width: 70px;
+            display: none;
+            place-items: center;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+          }
+          #progress-value {
+            display: block;
+            height: calc(100% - 15px);
+            width: calc(100% - 15px);
+            background-color: #ffffff;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 35px;
+            color: #001a2e;
+          }
+      
+              </style>
+              <script>
+                    let calcScrollValue = () => {
+            let scrollProgress = document.getElementById("progress");
+            let progressValue = document.getElementById("progress-value");
+            let pos = document.documentElement.scrollTop;
+            let calcHeight =
+              document.documentElement.scrollHeight -
+              document.documentElement.clientHeight;
+            let scrollValue = Math.round((pos * 100) / calcHeight);
+            if (pos > 100) {
+              scrollProgress.style.display = "grid";
+            } else {
+              scrollProgress.style.display = "none";
+            }
+            scrollProgress.addEventListener("click", () => {
+              document.documentElement.scrollTop = 0;
+            });
+            scrollProgress.style.background = `conic-gradient(#03cc65 ${scrollValue}%, #d7d7d7 ${scrollValue}%)`;
+          };
+          
+          window.onscroll = calcScrollValue;
+          window.onload = calcScrollValue;
+              </script>
+    </head>
+    <body>
+      
+      <header id="header-1" color="black"> 
+    <div class="navbar">
+      <a href="Measurometer1.html">Home</a>
+      <a href="Measurometer1.html">About Us</a>
+      <a href="Measurometer1.html">Designer Clocks</a>
+      <a href="Measurometer1.html">The Official Clock</a>
+      <a href="Measurometer1.html">Calculator</a>
+      <a href="Measurometer1.html">Stopwatch</a>
+      <a href="Measurometer1.html">RGB Colour Picker</a>
+      <a href="Measurometer1.html"><button id="button-1">Sign In</button></a>
+    </div>
+    
+
+    
+
+   <a href="Measurometer1.html"><img src="measurometer-logo.png" width="854px" height="201px"></a>
+ </header>
+ <h1>Please make your device in desktop site mode from ⋮ > Desktop site for better experience</h1>
+ <button id="button-100"><a href="Measurometer.html">Redirect to site</a></button>
+</body>
+</html>
 
